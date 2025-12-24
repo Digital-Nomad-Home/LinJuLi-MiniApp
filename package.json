@@ -1,5 +1,5 @@
 {
-  "name": "taro-vant-mobx-ts",
+  "name": "MiniApp",
   "version": "1.1.1",
   "private": true,
   "description": "Taro project scaffold based on TypeScript, Preact, MobX & Vant",

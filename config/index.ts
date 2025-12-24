@@ -7,7 +7,7 @@ import prodConfig from './prod';
 
 export default defineConfig(async (merge, {}) => {
   const baseConfig: UserConfigExport = {
-    projectName: 'taro-vant-mobx-ts',
+    projectName: 'MiniApp',
     date: '2025-3-23',
     designWidth: 750,
     deviceRatio: {

@@ -1,15 +1,15 @@
-# Taro-Vant-MobX-ts
+# MiniApp
 
 [Taro][1] project scaffold based on [TypeScript][2], [Preact][3], [MobX][4] & [Vant][5]
 
-[![CI & CD](https://github.com/idea2app/Taro-Vant-MobX-ts/actions/workflows/main.yml/badge.svg)][6]
+[![CI & CD](https://github.com/Digital-Nomad-Home/MiniApp/actions/workflows/main.yml/badge.svg)][6]
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)][7]
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)][8]
 
 ## Demo
 
-https://idea2app.github.io/Taro-Vant-MobX-ts/
+https://Digital-Nomad-Home.github.io/MiniApp/
 
 ## Technology stack
 
@@ -91,18 +91,18 @@ pnpm build weapp
 [3]: https://preactjs.com/
 [4]: https://github.com/mobxjs/mobx/blob/mobx4and5/docs/
 [5]: https://antmjs.github.io/vantui/
-[6]: https://github.com/idea2app/Taro-Vant-MobX-ts/actions/workflows/main.yml
-[7]: https://codespaces.new/idea2app/Taro-Vant-MobX-ts
-[8]: https://gitpod.io/?autostart=true#https://github.com/idea2app/Taro-Vant-MobX-ts
+[6]: https://github.com/Digital-Nomad-Home/MiniApp/actions/workflows/main.yml
+[7]: https://codespaces.new/Digital-Nomad-Home/MiniApp
+[8]: https://gitpod.io/?autostart=true#https://github.com/Digital-Nomad-Home/MiniApp
 [9]: https://tw.icebreaker.top/docs/quick-start/v4/taro-webpack
 [10]: https://github.com/features/actions
 [11]: https://pages.github.com/
 [12]: https://github.com/apps/settings
 [13]: https://pullrequestbadge.com/
 [14]: https://code.visualstudio.com/
-[15]: https://github.com/new?template_name=Taro-Vant-MobX-ts&template_owner=idea2app
-[16]: https://github.com/idea2app/Taro-Vant-MobX-ts/blob/a25e770ae6b405eb1b152cec2f17f354c00be9fb/.github/workflows/main.yml#L12-L15
-[17]: https://github.com/idea2app/Taro-Vant-MobX-ts/settings/secrets/actions
-[18]: https://github.com/idea2app/Lark-Next-Bootstrap-ts/blob/0ba4561daef428b3a0d7c07653a51583c5fd5fe4/.github/workflows/main.yml#L31-L60
-[19]: https://github.com/idea2app/Taro-Vant-MobX-ts/issues/new/choose
-[20]: https://github.com/idea2app/Taro-Vant-MobX-ts/projects
+[15]: https://github.com/new?template_name=MiniApp&template_owner=Digital-Nomad-Home
+[16]: https://github.com/Digital-Nomad-Home/MiniApp/blob/a25e770ae6b405eb1b152cec2f17f354c00be9fb/.github/workflows/main.yml#L12-L15
+[17]: https://github.com/Digital-Nomad-Home/MiniApp/settings/secrets/actions
+[18]: https://github.com/Digital-Nomad-Home/Lark-Next-Bootstrap-ts/blob/0ba4561daef428b3a0d7c07653a51583c5fd5fe4/.github/workflows/main.yml#L31-L60
+[19]: https://github.com/Digital-Nomad-Home/MiniApp/issues/new/choose
+[20]: https://github.com/Digital-Nomad-Home/MiniApp/projects

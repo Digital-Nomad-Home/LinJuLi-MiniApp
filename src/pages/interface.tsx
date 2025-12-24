@@ -11,7 +11,7 @@ definePageConfig({
   navigationBarTitleText: '请求接口'
 });
 
-const repositoryStore = new RepositoryModel('idea2app');
+const repositoryStore = new RepositoryModel('Digital-Nomad-Home');
 
 export default () => (
   <>
