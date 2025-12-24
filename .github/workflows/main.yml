@@ -1,0 +1,82 @@
+name: CI & CD
+on:
+  push:
+    branches:
+      - master
+jobs:
+  Build-and-Deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      WMA_ID: ${{ secrets.WMA_ID }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - name: Install Dependencies
+        run: pnpm i --frozen-lockfile
+
+      - name: Build HTML 5 version
+        if: ${{ !env.WMA_ID }}
+        run: pnpm build h5
+        env:
+          NODE_ENV: production
+
+      - name: Deploy HTML 5 version to GitHub pages
+        if: ${{ !env.WMA_ID }}
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          publish_dir: ./dist
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force_orphan: true
+
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v25
+        if: ${{ env.VERCEL_TOKEN && env.VERCEL_ORG_ID && env.VERCEL_PROJECT_ID }}
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          working-directory: ./
+          vercel-args: --prod
+
+      - name: Build WeChat version
+        if: ${{ env.WMA_ID }}
+        run: pnpm build weapp
+        env:
+          NODE_ENV: production
+
+      - name: Get NPM version
+        if: ${{ env.WMA_ID }}
+        uses: martinbeentjes/npm-get-version-action@master
+        id: package-version
+
+      - name: Upload Artifact
+        if: ${{ env.WMA_ID }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: Taro-miniapp-${{ steps.package-version.outputs.current-version }}-bundle
+          path: ./dist/
+
+      - name: Upload to WeChat
+        if: ${{ env.WMA_ID }}
+        run: |
+          cat > WMA-upload.key <<EOF
+          ${{ secrets.WMA_UPLOAD_KEY }}
+          EOF
+          npx miniprogram-ci upload \
+            --pp ./ \
+            --pkp ./WMA-upload.key \
+            --appid ${{ env.WMA_ID }} \
+            --uv ${{ steps.package-version.outputs.current-version }}
