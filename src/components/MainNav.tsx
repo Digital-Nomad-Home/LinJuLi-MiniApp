@@ -23,5 +23,8 @@ export const MainNav: FC<MainNavProps> = ({ path }) => (
     <TabbarItem icon='exchange' name='interface'>
       接口
     </TabbarItem>
+    <TabbarItem icon='gold-coin-o' name='transaction'>
+      交易
+    </TabbarItem>
   </Tabbar>
 );
