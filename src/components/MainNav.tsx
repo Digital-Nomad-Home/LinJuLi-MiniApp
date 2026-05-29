@@ -20,8 +20,11 @@ export const MainNav: FC<MainNavProps> = ({ path }) => (
     <TabbarItem icon='cluster-o' name='component'>
       组件
     </TabbarItem>
-    <TabbarItem icon='exchange' name='interface'>
+    <TabbarItem icon='info-o' name='interface'>
       接口
+    </TabbarItem>
+    <TabbarItem icon='exchange' name='exchange'>
+      交易所
     </TabbarItem>
   </Tabbar>
 );
